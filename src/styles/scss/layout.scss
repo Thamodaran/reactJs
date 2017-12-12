@@ -1,0 +1,179 @@
+@import "_variables";
+@import "_mixins";
+@import "_header";
+body {
+  margin: 0px;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.user {
+  width: 20%;
+  @extend .left;
+  padding: 0;
+}
+.contentBorderShadow {
+  border: $primaryBorder;
+  box-shadow: $boxShadow;
+}
+.categoryHeader {
+  @include headerStyle(20px, 100%, $white, 20px, bold, center);
+  background-color: #3b454e;
+  margin-bottom: 10px;
+  padding: 10px 0 10px 0;
+}
+.categoryListHeader {
+  @include headerStyle(4%, 100%, #000000, 20px, bold, center);
+  padding: 10px 0 10px 0;
+}
+.todoForm {
+  position: relative;
+  @extend .left;
+  @include heightWidth(89.5vh, 20%);
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: $containerMargin;
+  .createCategories{
+    @include heightWidth(30px, 95%);
+    padding-left: 10px;
+    border: none;
+  }
+}
+.todocommentsForm {
+  @extend .todoForm;
+}
+.createDesc {
+  @include heightWidth($descFormHeight, 90%);
+  border-radius: 10px;
+  padding-left: 20px;
+}
+.formDiv {
+  position: absolute;
+  bottom: 0;
+  @include heightWidth($descFormHeight, 100%);
+  margin: 20px 0 20px 0;
+}
+.wrapper {
+  @include background(url('/todo3.jpg'), fixed, cover);
+  width: 100%;
+}
+.todoContent{
+  cursor: pointer;
+  @include heightWidth(5%, 90%);
+  box-shadow: $boxShadow;
+  color: $primaryTextColor;
+  padding: $contentPadding;
+  &:hover {
+    color: $white;
+    background-color: $primaryColor;
+  }
+}
+.todoCategoryList {
+  @extend .left;
+  @include heightWidth(89.5vh, 80%);
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: $containerMargin;
+}
+.todoCategoryListWithComments {
+  @extend .todoCategoryList;
+  width: 60%;
+  .todoCategoryContent {
+    @include heightWidth(20%, 16%);
+      margin: 10px 0 10px 10px;
+      .desc {
+        height: 100px;
+      }
+  }
+}
+.hide {
+  display : none;
+}
+.contentColor {
+  color: $contentColor;
+}
+.container {
+  @include heightWidth(100vh, 100%);
+}
+.todoCategoryContents {
+  margin-top: 20px;
+  .todoCategoryContent {
+    @include heightWidth(30%, 20%);
+    border: $primaryBorder;
+    @extend .contentColor;
+    @extend .left;
+    margin: 10px 0 10px 20px;
+    padding: $contentPadding;
+    background-color: rgba(115, 54, 19, 0.6);
+    color: $white;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 10px 5px 10px black;
+    &:nth-child(odd){
+      transform: rotate(5deg) scale(0.9);
+      &:hover {
+        @include todoHoverStyle($transform, $transition);
+      }
+    }
+    &:nth-child(even){
+      transform: rotate(-5deg) scale(0.9);
+      &:hover {
+        @include todoHoverStyle($transform, $transition);
+      }
+    }
+  }
+}
+.inputCategory {
+  @include heightWidth(80%, 80%);
+  border: none;
+  @extend .left;
+}
+.descFormDiv {
+  width: 50%;
+  margin: auto;
+}
+.logo {
+  width: 20%;
+  @extend .left;
+  img {
+    @include heightWidth(35px, 135px);
+    object-fit: cover;
+  }
+}
+.todoHeading {
+  width: 60%;
+  @extend .left;
+}
+.desc {
+  @include heightWidth(150px, 87%);
+  margin-top: 10px;
+  .descInput {
+    margin-top: 10px;
+    width: 97%;
+    height: 80%;
+
+  }
+  .descTextArea {
+    @include heightWidth(100%, 100%);
+    border-radius: 5px;
+    padding: 10px 0 0 10px;
+  }
+}
+.delete {
+  cursor: pointer;
+  @include heightWidth(20px, 20px);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: $white;
+  background-color: rgba(225,0,0,0.9);
+  text-align: center;
+}
+.taskName{
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}

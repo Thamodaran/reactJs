@@ -1,0 +1,27 @@
+@mixin border-top-right-radius($valOne, $valTwo) {
+    border-top-right-radius: $valOne $valTwo;
+}
+@mixin border-top-left-radius($valOne, $valTwo) {
+    border-top-left-radius: $valOne $valTwo;
+}
+@mixin headerStyle($height, $width, $color, $fontSize, $fontWeight, $textAlign) {
+  height: $height;
+  width: $width;
+  color: $color;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  text-align: $textAlign;
+}
+@mixin background($imgUrl, $attachment, $size) {
+  background-image: $imgUrl;
+  background-attachment: $attachment;
+  background-size: $size;
+}
+@mixin heightWidth($height, $width) {
+  height: $height;
+  width: $width;
+}
+@mixin todoHoverStyle($transform, $transition) {
+  transform: rotate(0deg) scale(1);
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+}
